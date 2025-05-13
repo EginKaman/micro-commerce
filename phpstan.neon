@@ -12,7 +12,6 @@ parameters:
     - database/migrations
     - lang
     - routes
-    - tests
   configDirectories:
     - config
   level: 6 # (0-8)
@@ -23,8 +22,6 @@ parameters:
   		maximumNumberOfProcesses: 8
   		minimumNumberOfJobsPerProcess: 2
   ignoreErrors:
-  		-
-  			identifier: instanceof.alwaysTrue
   		-
   			identifier: missingType.iterableValue
   		-
