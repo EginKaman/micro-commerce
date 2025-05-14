@@ -19,6 +19,9 @@
                     <flux:navbar.item icon="layout-grid" :href="route('admin.products.index')" :current="request()->routeIs('admin.products.*')" wire:navigate>
                         {{ __('Products') }}
                     </flux:navbar.item>
+                    <flux:navbar.item icon="layout-grid" :href="route('admin.orders.index')" :current="request()->routeIs('admin.orders.*')" wire:navigate>
+                        {{ __('Orders') }}
+                    </flux:navbar.item>
                 </flux:navlist.group>
             </flux:navlist>
 
