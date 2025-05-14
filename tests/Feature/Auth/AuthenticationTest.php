@@ -6,7 +6,7 @@ use App\Models\User;
 use Livewire\Volt\Volt as LivewireVolt;
 
 test('login screen can be rendered', function (): void {
-    $response = $this->get('/login');
+    $response = $this->get('/admin/login');
 
     $response->assertStatus(200);
 });
@@ -21,7 +21,7 @@ test('users can authenticate using the login screen', function (): void {
 
     $response
         ->assertHasNoErrors()
-        ->assertRedirect(route('dashboard', absolute: false));
+        ->assertRedirect(route('admin.dashboard', absolute: false));
 
     $this->assertAuthenticated();
 });
@@ -42,7 +42,7 @@ test('users can not authenticate with invalid password', function (): void {
 test('users can logout', function (): void {
     $user = User::factory()->create();
 
-    $response = $this->actingAs($user)->post('/logout');
+    $response = $this->actingAs($user)->post('/admin/logout');
 
     $response->assertRedirect('/');
 

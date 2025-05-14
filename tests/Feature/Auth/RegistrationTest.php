@@ -5,7 +5,7 @@ declare(strict_types=1);
 use Livewire\Volt\Volt;
 
 test('registration screen can be rendered', function (): void {
-    $response = $this->get('/register');
+    $response = $this->get('/admin/register');
 
     $response->assertStatus(200);
 });
@@ -20,7 +20,7 @@ test('new users can register', function (): void {
 
     $response
         ->assertHasNoErrors()
-        ->assertRedirect(route('dashboard', absolute: false));
+        ->assertRedirect(route('admin.dashboard', absolute: false));
 
     $this->assertAuthenticated();
 });
