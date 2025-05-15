@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-use App\Livewire\Components\Order\Index as OrderIndex;
-use App\Livewire\Components\Order\Show as OrderShow;
-use App\Livewire\Components\Product\Create;
-use App\Livewire\Components\Product\Edit;
-use App\Livewire\Components\Product\Index as ProductIndex;
+use App\Livewire\Components\Admin\Order\Index as OrderIndex;
+use App\Livewire\Components\Admin\Order\Show as OrderShow;
+use App\Livewire\Components\Admin\Product\Create;
+use App\Livewire\Components\Admin\Product\Edit;
+use App\Livewire\Components\Admin\Product\Index as ProductIndex;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 

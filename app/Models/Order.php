@@ -28,6 +28,10 @@ class Order extends Model
         'total_price',
     ];
 
+    protected $attributes = [
+        'status' => OrderStatus::New,
+    ];
+
     /**
      * @return BelongsToMany<Product, $this, Pivot>
      */

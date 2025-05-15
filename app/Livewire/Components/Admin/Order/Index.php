@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Livewire\Components\Order;
+namespace App\Livewire\Components\Admin\Order;
 
 use App\Models\Order;
 use App\Models\Product;
@@ -34,6 +34,6 @@ class Index extends Component
 
     public function render(): View
     {
-        return view('livewire.orders.index');
+        return view('livewire.admin.orders.index');
     }
 }

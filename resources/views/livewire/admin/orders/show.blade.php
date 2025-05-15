@@ -22,5 +22,28 @@
 
         <flux:heading>{{ __('Total price') }}</flux:heading>
         <flux:text class="mt-2">{{ Number::currency($order->total_price) }}</flux:text>
+
+        <table class="table-none md:table-auto">
+            <thead>
+            <tr>
+                <th>{{ __('ID') }}</th>
+                <th>{{ __('Name') }}</th>
+                <th>{{ __('Price') }}</th>
+                <th>{{ __('Quantity') }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach ($order->products as $product)
+                <tr>
+                    <td>
+                        {{ $product->id }}
+                    </td>
+                    <td>{{ $product->name }}</td>
+                    <td>{{ Number::currency($product->pivot->price) }}</td>
+                    <td>{{ $product->pivot->quantity }}</td>
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
     </div>
 </div>

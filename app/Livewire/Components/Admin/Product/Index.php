@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Livewire\Components\Product;
+namespace App\Livewire\Components\Admin\Product;
 
 use App\Models\Product;
 use Illuminate\Contracts\View\View;
@@ -33,6 +33,6 @@ class Index extends Component
 
     public function render(): View
     {
-        return view('livewire.products.index');
+        return view('livewire.admin.products.index');
     }
 }
