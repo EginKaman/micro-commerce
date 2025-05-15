@@ -1,7 +1,12 @@
 <div class="flex h-full w-full flex-1 flex-col gap-4 rounded-xl">
     <div class="flex">
-        <div class="my-5 flex justify-center w-3/4"><h1 class="underline text-5xl">{{ __('Products') }}</h1></div>
-        <div class="my-5 flex justify-center w-1/4"><h1 class="underline text-5xl">{{ __('Cart') }}</h1></div>
+        <div class="my-5 flex justify-center w-3/4">
+            <flux:field>
+                <flux:label>{{ __('Search') }}</flux:label>
+                <flux:input wire:model.live.throttle.300ms="search"/>
+                <flux:error name="search"/>
+            </flux:field>
+        </div>
     </div>
     <div class="flex">
         <div class="flex flex-wrap justify-between w-3/4 grid grid-cols-2 gap-4">

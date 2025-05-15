@@ -87,7 +87,7 @@ class CartService
      */
     public function getCartItems(): Collection
     {
-        return $this->session->has(self::SHOPPING_CART) ? $this->session->get(self::SHOPPING_CART) : collect();
+        return $this->session->has(self::SHOPPING_CART) ? $this->session->get(self::SHOPPING_CART) : new Collection();
     }
 
     /**
@@ -99,7 +99,7 @@ class CartService
             $quantity = self::MINIMUM_QUANTITY;
         }
 
-        return collect([
+        return new Collection([
             'name'        => $product->name,
             'price'       => $product->price,
             'quantity'    => $quantity,

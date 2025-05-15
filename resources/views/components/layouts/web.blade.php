@@ -7,16 +7,17 @@
 <div class="bg-background flex min-h-svh flex-col items-center justify-center gap-6 p-6 md:p-10">
     <div class="flex w-full max-w-lg flex-col gap-4">
         <a href="{{ route('home') }}" class="flex flex-col items-center gap-2 font-medium" wire:navigate>
-                    <span class="flex h-9 w-9 mb-1 items-center justify-center rounded-md">
-                        <x-app-logo-icon class="size-9 fill-current text-black dark:text-white" />
-                    </span>
+            <span class="flex h-9 w-9 mb-1 items-center justify-center rounded-md">
+                <x-app-logo-icon class="size-9 fill-current text-black dark:text-white"/>
+            </span>
             <span class="sr-only">{{ config('app.name', 'Laravel') }}</span>
         </a>
-        <flux:modal.trigger name="edit-profile">
-            <flux:button>Cart</flux:button>
+        <flux:button href="{{ route('admin.dashboard') }}">{{ __('Admin panel') }}</flux:button>
+        <flux:modal.trigger name="cart">
+            <flux:button>{{ __('Cart') }}</flux:button>
         </flux:modal.trigger>
 
-        <flux:modal name="edit-profile" class="md:w-96">
+        <flux:modal name="cart" class="md:w-96">
             @livewire(\App\Livewire\Components\CartComponent::class)
         </flux:modal>
         <div class="flex flex-col gap-6">

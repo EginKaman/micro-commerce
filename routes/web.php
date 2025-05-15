@@ -8,5 +8,4 @@ use App\Livewire\Components\Web\Search;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', Catalog::class)->name('home');
-Route::get('/search', Search::class)->name('search');
 Route::get('/checkout', Checkout::class)->name('checkout');
