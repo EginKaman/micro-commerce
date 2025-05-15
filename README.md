@@ -145,13 +145,13 @@ parameters:
 ## Running Tests
 
 ```shell
-php artisan test
+sail artisan test
 ```
 
 Any arguments that can be passed to the `phpunit` command may also be passed to the Artisan `test` command:
 
 ```shell
-php artisan test --testsuite=Feature --stop-on-failure
+sail artisan test --testsuite=Feature --stop-on-failure
 ```
 
 <a name="running-tests-in-parallel"></a>
@@ -159,14 +159,14 @@ php artisan test --testsuite=Feature --stop-on-failure
 ### Running Tests in Parallel
 
 ```shell
-php artisan test --parallel
+sail artisan test --parallel
 ```
 
 By default, Laravel will create as many processes as there are available CPU cores on your machine. However, you may
 adjust the number of processes using the `--processes` option:
 
 ```shell
-php artisan test --parallel --processes=4
+sail artisan test --parallel --processes=4
 ```
 
 > [!WARNING]  
