@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Livewire\Components\Admin\Product;
 
 use App\Models\Product;
+use App\Repositories\ProductRepository;
 use Illuminate\Contracts\View\View;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Livewire\Attributes\Computed;
@@ -21,9 +22,7 @@ class Index extends Component
     #[Computed]
     public function products(): LengthAwarePaginator
     {
-        return Product::query()
-            ->latest()
-            ->paginate(15);
+        return ProductRepository::paginate();
     }
 
     public function delete(Product $product): void

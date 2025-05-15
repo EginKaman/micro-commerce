@@ -25,17 +25,15 @@ class OrderForm extends Form
 
     public function save(): void
     {
-        $this->validate();
+        $validated = $this->validate();
 
-        $order = new Order();
-
-        $order->fill($this->all());
+        $order = new Order($validated);
 
         $order->total_price = Cart::totalPrice();
 
         $order->save();
 
-        $order->products()->attach(Cart::getCartItems()->mapWithKeys(fn ($item, $key) => [$key => ['quantity' => $item['quantity'], 'price' => $item['price']]]));
+        $order->products()->attach(Cart::getCartItemsToAttach());
     }
 
     protected function rules(): array

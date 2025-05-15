@@ -6,6 +6,7 @@ namespace App\Livewire\Components\Admin\Order;
 
 use App\Models\Order;
 use App\Models\Product;
+use App\Repositories\OrderRepository;
 use Illuminate\Contracts\View\View;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Livewire\Attributes\Computed;
@@ -22,9 +23,7 @@ class Index extends Component
     #[Computed]
     public function orders(): LengthAwarePaginator
     {
-        return Order::query()
-            ->latest('id')
-            ->paginate(15);
+        return OrderRepository::paginate();
     }
 
     public function delete(Product $product): void

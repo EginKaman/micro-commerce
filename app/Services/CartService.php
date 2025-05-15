@@ -91,6 +91,15 @@ class CartService
     }
 
     /**
+     * @return Collection<int, Collection<int, mixed>>
+     */
+    public function getCartItemsToAttach(): Collection
+    {
+        $this->getCartItems()
+            ->mapWithKeys(fn ($item, $key) => [$key => ['quantity' => $item['quantity'], 'price' => $item['price']]]);
+    }
+
+    /**
      * @return Collection<string, mixed>
      */
     protected function createCartItem(Product $product, int $quantity): Collection

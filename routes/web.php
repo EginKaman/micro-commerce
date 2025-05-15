@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 use App\Livewire\Components\Web\Catalog;
 use App\Livewire\Components\Web\Checkout;
-use App\Livewire\Components\Web\Search;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', Catalog::class)->name('home');
